@@ -1,24 +1,44 @@
 package entities;
 
-import annotations.SuperClass;
+import annotations.Column;
 import annotations.Table;
-import annotations.enumerators.Tipovi;
 
-@SuperClass
 @Table(name = "proizvodi")
-public abstract class Proizvod extends BasicEntity{
+public class Proizvod extends BasicEntity{
 
-    private Tipovi tip;
+    @Column(name = "proizvod_idTipa")
+    private String idTipa;
+    @Column(name = "proizvod_naziv")
+    private String naziv;
+
+    private Tip tipProizvoda;
 
     public Proizvod(){
         super();
     }
 
-    public Tipovi getTip() {
-        return tip;
+    public Tip getTipProizvoda() {
+        return tipProizvoda;
     }
 
-    public void setTip(Tipovi tip) {
-        this.tip = tip;
+    public void setTipProizvoda(Tip tipProizvoda) {
+        this.tipProizvoda = tipProizvoda;
+    }
+
+
+    public String getIdTipa() {
+        return idTipa;
+    }
+
+    public void setIdTipa(String idTipa) {
+        this.idTipa = idTipa;
+    }
+
+    public String getNaziv() {
+        return naziv;
+    }
+
+    public void setNaziv(String naziv) {
+        this.naziv = naziv;
     }
 }
