@@ -2,14 +2,14 @@ package entities;
 
 import annotations.Column;
 import annotations.Table;
-import api.GetTablePrameters;
+import api.GetTableParameters;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 @Table(name = "proizvodi")
-public class Proizvod extends BasicEntity implements GetTablePrameters {
+public class Proizvod extends BasicEntity implements GetTableParameters {
 
     @Column(name = "proizvod_idTipa")
     private String idTipa;
@@ -61,10 +61,10 @@ public class Proizvod extends BasicEntity implements GetTablePrameters {
     }
 
     @Override
-    public ArrayList<String> getTableColumns(Class<?> superKlasa) {
+    public ArrayList<String> getTableColumns(Class<?> klasa) {
         ArrayList<String> columns = new ArrayList<>();
 
-        for(Field field : superKlasa.getDeclaredFields()) {
+        for(Field field : klasa.getDeclaredFields()) {
             for(Annotation a : field.getAnnotations()) {
                 if(a instanceof Column) {
                     columns.add(((Column) a).name());

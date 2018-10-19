@@ -2,7 +2,7 @@ package api;
 
 import java.util.ArrayList;
 
-public interface GetTablePrameters {
+public interface GetTableParameters {
 
     String getTableName(Class<?> klasa);
     ArrayList<String> getTableColumns(Class<?> klasa);
