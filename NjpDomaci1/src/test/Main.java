@@ -1,14 +1,17 @@
 package test;
 
+import api.ORM;
 import entities.Proizvod;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Proizvod p = new Proizvod();
-
-        System.out.println(p.getTableName(p.getClass()));
-        System.out.println(p.getTableColumns(p.getClass()));
+		ORM orm = new ORM();
+		
+        System.out.println(orm.getTableName(p.getClass()));
+        System.out.println(orm.getTableColumns(p.getClass()));
+//        System.out.println(orm.getSuperClassColumns(p.getClass().getSuperclass()));
 	}
 
 }

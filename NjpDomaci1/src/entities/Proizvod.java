@@ -9,7 +9,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 @Table(name = "proizvodi")
-public class Proizvod extends BasicEntity implements GetTableParameters {
+public class Proizvod extends BasicEntity {
 
     @Column(name = "proizvod_idTipa")
     private String idTipa;
@@ -45,34 +45,5 @@ public class Proizvod extends BasicEntity implements GetTableParameters {
 
     public void setNaziv(String naziv) {
         this.naziv = naziv;
-    }
-
-    @Override
-    public String getTableName(Class<?> klasa) {
-        Annotation[] anotacije = klasa.getAnnotations();
-        String tableName = "";
-        for (Annotation anotacija : anotacije) {
-            if (anotacija instanceof Table){
-                tableName = ((Table)anotacija).name();
-                break;
-            }
-        }
-        return tableName;
-    }
-
-    @Override
-    public ArrayList<String> getTableColumns(Class<?> klasa) {
-        ArrayList<String> columns = new ArrayList<>();
-
-        for(Field field : klasa.getDeclaredFields()) {
-            for(Annotation a : field.getAnnotations()) {
-                if(a instanceof Column) {
-                    columns.add(((Column) a).name());
-                }
-
-            }
-        }
-        
-        return columns;
     }
 }

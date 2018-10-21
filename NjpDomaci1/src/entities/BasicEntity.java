@@ -1,6 +1,7 @@
 package entities;
 
 import annotations.Column;
+import annotations.Id;
 import annotations.PrimaryKey;
 import annotations.SuperClass;
 
@@ -8,6 +9,7 @@ import annotations.SuperClass;
 public abstract class BasicEntity{
 	
 	@PrimaryKey
+	@Id
 	@Column(name="id")
 	private String id;
 
