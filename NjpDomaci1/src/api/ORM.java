@@ -10,7 +10,7 @@ import annotations.PrimaryKey;
 import annotations.SuperClass;
 import annotations.Table;
 
-public class ORM {
+public class ORM implements GetTableParameters{
 
 	public String getTableName(Class<?> klasa) {
 		Annotation[] anotacije = klasa.getAnnotations();
@@ -72,12 +72,12 @@ public class ORM {
 					if (a instanceof Id) {
 						id = true;
 					}
-					if (a instanceof Column) {
+					if (a instanceof Column) { // Ovde ce da nam pokupi samo jedan column ja msm
 						column = a;
 					}
 				}
 				if (PK && id && column != null) {
-					columns.add(((Column) column).name());
+					columns.add(((Column) column).name()); // Ovaj deo bi trebao unutar annotation for-a...
 				}
 			}
 		}

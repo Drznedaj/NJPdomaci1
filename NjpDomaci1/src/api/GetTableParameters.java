@@ -6,4 +6,5 @@ public interface GetTableParameters {
 
     String getTableName(Class<?> klasa);
     ArrayList<String> getTableColumns(Class<?> klasa);
+    ArrayList<String> getSuperClassId(Class<?> klasa);
 }
