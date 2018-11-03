@@ -9,6 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		DAO.getInstance();
+		System.out.printf(p.getClass().getPackageName());
 //        System.out.println(DAO.getInstance().getTableName(p.getClass()));
 //        System.out.println(DAO.getInstance().getTableColumns(p.getClass()));
 		

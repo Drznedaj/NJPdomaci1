@@ -13,12 +13,18 @@ import entities.Proizvod;
 
 public aspect CreateTables{
 	
+<<<<<<< HEAD
 	pointcut initTables() : initialization(DAO.new());
 //	pointcut insertTables() : initialization(ORM.new(..));
+=======
+	pointcut initTables() : call(ORM.new(..));
+	//pointcut insertTables() : initialization(ORM.new(..));
+>>>>>>> 4cadd6aee67c17e926ca350b279089ee43aa1a32
 	
 	after() : initTables() {
 		// TODO kreirati entitete i napuniti magijom tabele, create , insert.
 		Proizvod p = new Proizvod();
+<<<<<<< HEAD
 		Prodavnica prodavnica = new Prodavnica();
 		
 		Class<?> cl = p.getClass();
@@ -44,6 +50,13 @@ public aspect CreateTables{
 		}
 		sb.append(")");
 		System.out.println(sb);
+=======
+		Class<?> klazzP = p.getClass();
+		Annotation[] anotacije = klazzP.getAnnotations();
+//		Arraylist<Field> fieldovi = new ArrayList<>();
+//		Class<?> cl = p.getClass();
+		System.out.printf("blasjldkj");
+>>>>>>> 4cadd6aee67c17e926ca350b279089ee43aa1a32
 	}
 //	pointcut createTables() : initialization(* type_pattern.new(..)) ;
 }
