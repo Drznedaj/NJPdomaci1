@@ -11,7 +11,7 @@ import annotations.SuperClass;
 import annotations.Table;
 
 public class ORM implements GetTableParameters{
-
+	private static ORM instance = null;
 	public String getTableName(Class<?> klasa) {
 		Annotation[] anotacije = klasa.getAnnotations();
 		String tableName = "";
@@ -84,5 +84,11 @@ public class ORM implements GetTableParameters{
 
 		// System.out.println("SUPER KLASA: " + isSuperClassFound + " , " + pkey);
 		return columns;
+	}
+	public static ORM getInstance() {
+		if(instance == null) {
+			instance = new ORM();
+		}
+		return instance;
 	}
 }
