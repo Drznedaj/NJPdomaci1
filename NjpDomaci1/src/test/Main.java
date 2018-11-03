@@ -1,13 +1,12 @@
 package test;
 
 import api.DAO;
-import api.ORM;
+import entities.Prodavnica;
 import entities.Proizvod;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Proizvod p = new Proizvod();
 		
 		DAO.getInstance();
 //        System.out.println(DAO.getInstance().getTableName(p.getClass()));

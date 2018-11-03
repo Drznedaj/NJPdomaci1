@@ -10,14 +10,15 @@ import entities.Proizvod;
 
 public aspect CreateTables{
 	
-	pointcut initTables() : initialization(ORM.new(..));
-	pointcut insertTables() : initialization(ORM.new(..));
+	pointcut initTables() : call(entities.*.new());
+//	pointcut insertTables() : initialization(ORM.new(..));
 	
 	after() : initTables() {
 		// TODO kreirati entitete i napuniti magijom tabele, create , insert.
-		Proizvod p = new Proizvod();
-		Class<?> klazzP = p.getClass();
-		Annotation[] anotacije = klazzP.getAnnotations();
+//		Proizvod p = new Proizvod();
+//		Class<?> klazzP = p.getClass();
+//		klazzP = klazzP.getSuperclass();
+		System.out.println("Usao u aspect");
 //		Arraylist<Field> fieldovi = new ArrayList<>();
 //		Class<?> cl = p.getClass();
 	}
