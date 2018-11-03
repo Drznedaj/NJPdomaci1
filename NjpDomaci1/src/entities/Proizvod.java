@@ -2,11 +2,6 @@ package entities;
 
 import annotations.Column;
 import annotations.Table;
-import api.GetTableParameters;
-
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
 
 @Table(name = "proizvodi")
 public class Proizvod extends BasicEntity {

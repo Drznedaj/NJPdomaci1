@@ -10,7 +10,7 @@ import annotations.PrimaryKey;
 import annotations.SuperClass;
 import annotations.Table;
 
-public class ORM implements GetTableParameters{
+public class ORM {
 	private static ORM instance = null;
 	public String getTableName(Class<?> klasa) {
 		Annotation[] anotacije = klasa.getAnnotations();
