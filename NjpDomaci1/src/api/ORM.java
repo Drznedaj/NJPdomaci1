@@ -24,6 +24,28 @@ public class ORM implements GetTableParameters{
 		return tableName;
 	}
 
+	public ArrayList<String> getFieldValues(Class<?> klasa){
+		ArrayList<String> fieldValues = new ArrayList<>();
+		for(Field f : klasa.getDeclaredFields()){
+		    fieldValues.add(f.getName());
+        }
+		return fieldValues;
+	}
+
+	public String getTableColumnPlusValue(Class<?> klasa, String colName){
+	    String col = null;
+        for (Field field : klasa.getDeclaredFields()) {
+            for (Annotation a : field.getAnnotations()) {
+                if (a instanceof Column && (((Column) a).name()).equals(colName)) {
+                    col = ((Column) a).name();
+                    col += "=";
+
+                }
+            }
+        }
+        return col;
+    }
+
 	public ArrayList<String> getTableColumns(Class<?> klasa) {
 		ArrayList<String> columns = new ArrayList<>();
 

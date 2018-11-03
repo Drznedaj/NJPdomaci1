@@ -10,8 +10,8 @@ import entities.Proizvod;
 
 public aspect CreateTables{
 	
-	pointcut initTables() : initialization(ORM.new(..));
-	pointcut insertTables() : initialization(ORM.new(..));
+	pointcut initTables() : call(ORM.new(..));
+	//pointcut insertTables() : initialization(ORM.new(..));
 	
 	after() : initTables() {
 		// TODO kreirati entitete i napuniti magijom tabele, create , insert.
@@ -20,6 +20,7 @@ public aspect CreateTables{
 		Annotation[] anotacije = klazzP.getAnnotations();
 //		Arraylist<Field> fieldovi = new ArrayList<>();
 //		Class<?> cl = p.getClass();
+		System.out.printf("blasjldkj");
 	}
 //	pointcut createTables() : initialization(* type_pattern.new(..)) ;
 }

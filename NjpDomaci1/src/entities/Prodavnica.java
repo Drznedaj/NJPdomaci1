@@ -2,7 +2,10 @@ package entities;
 
 import annotations.Column;
 import annotations.Table;
+import annotations.Type;
+import annotations.enumerators.FieldType;
 import api.GetTableParameters;
+import jdk.jfr.ContentType;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -12,14 +15,17 @@ import java.util.ArrayList;
 public class Prodavnica extends BasicEntity {
 	
 	@Column(name= "prodavnica_ime")
+	@Type(name = FieldType.VARCHAR)
 	private String ime;
 	
 	@Column(name= "prodavnica_adresa")
+    @Type(name = FieldType.VARCHAR)
 	private String adresa;
-	
-	@Column(name= "prodavnica_proizvodi")
+
 	private ArrayList<Proizvod> proizvodi;
-	
+
+	@Column(name = "prodavnica_brojProdavaca")
+    @Type(name = FieldType.INT)
 	private String brojProdavaca;
 	
 	public Prodavnica() {
