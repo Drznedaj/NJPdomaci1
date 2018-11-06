@@ -46,6 +46,21 @@ public class ORM {
         return col;
     }
 
+	public String getTableColumn(Class<?> klasa, String colName) {
+		String column = null;
+
+		for (Field field : klasa.getDeclaredFields()) {
+			for (Annotation a : field.getAnnotations()) {
+				if (a instanceof Column && ((Column) a).name().equals(colName)) {
+					column = ((Column) a).name();
+				}
+
+			}
+		}
+
+		return column;
+	}
+
 	public ArrayList<String> getTableColumns(Class<?> klasa) {
 		ArrayList<String> columns = new ArrayList<>();
 

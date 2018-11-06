@@ -37,6 +37,7 @@ public class DAO {
 		System.out.printf("INSERT INTO %s %s VALUES %s",orm.getTableName(klazz),koloneFormat,valuesFormat);
 		return true;
 	}
+
 	public boolean update(ORM orm, Class<?> klazz) {
         String kolonePlusValues = "";
         ArrayList<String> kol = new ArrayList<>();
