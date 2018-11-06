@@ -1,34 +1,29 @@
 package aspects;
 
-import java.lang.annotation.Annotation;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-
-import api.DAO;
 import api.ORM;
+import api.DAO;
 import entities.Prodavnica;
 import entities.Proizvod;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public aspect CreateTables{
 	
 
-	pointcut initTables() : initialization(DAO.new());
+	pointcut initTables() : initialization(DAO.new(..));
 //	pointcut insertTables() : initialization(ORM.new(..));
 	
 	after() : initTables() {
-		// TODO kreirati entitete i napuniti magijom tabele, create , insert.
 		Proizvod p = new Proizvod();
-		Prodavnica prodavnica = new Prodavnica();
-		
+		Prodavnica prod = new Prodavnica();
+
 		Class<?> cl = p.getClass();
 		create(cl);
-//		ArrayList<String> columns = 
-//		for(String s: columns) {
-//			System.out.println(s);
-//		}
-		
+
+        Class<?> cl1 = prod.getClass();
+        create(cl1);
 	}
 	
 	private void create(Class<?> klazz) {
@@ -36,10 +31,10 @@ public aspect CreateTables{
 		StringBuilder sb = new StringBuilder();
 		sb.append("CREATE TABLE "+ORM.getInstance().getTableName(klazz) + " (");
 		ArrayList<String> columns = ORM.getInstance().getTableColumns(klazz);
-		for(int i = 0; i < columns.size();i++) {
+		for(int i = columns.size()-1; i >= 0;i--) {
 			sb.append(columns.get(i));
 			
-			if(i < columns.size()-1) {
+			if(i != 0) {
 				sb.append(",");
 			}
 		}

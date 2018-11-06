@@ -1,14 +1,16 @@
 package test;
 
 import api.DAO;
+import api.Generator;
+import api.ORM;
 import entities.Prodavnica;
 import entities.Proizvod;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
-		DAO.getInstance();
+		Generator.getInstance().generateObjects();
+//		DAO.getInstance().insert(ORM.getInstance(),p.getClass());
 //        System.out.println(DAO.getInstance().getTableName(p.getClass()));
 //        System.out.println(DAO.getInstance().getTableColumns(p.getClass()));
 		
