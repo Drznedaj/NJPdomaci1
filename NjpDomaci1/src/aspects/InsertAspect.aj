@@ -3,14 +3,17 @@ import entities.Proizvod;
 import entities.Prodavnica;
 import org.aspectj.lang.JoinPoint;
 
+import java.lang.reflect.Field;
+
 public aspect InsertAspect {
 
-    pointcut insertOneColumn(JoinPoint jp) : execution(public void entities.*.*(..));
+    pointcut insertOneColumn() : execution(public void entities.*.*(..));
 
     after() : insertOneColumn() {
-        Object o = jp.getArgs();
-        String s=null;
+        Object[] o = thisJoinPoint.getArgs();
 
-        System.out.println("dodajem "+o);
+        String parametarMetode =o[0].toString();
+
+        System.out.println("dodajem "+parametarMetode);
     }
 }
