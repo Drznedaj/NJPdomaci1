@@ -2,6 +2,9 @@ package api;
 
 import annotations.Type;
 import annotations.enumerators.FieldType;
+import entities.Prodavnica;
+import entities.Proizvod;
+import entities.Tip;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -13,7 +16,9 @@ public class DAO {
 	private static DAO instance = null;
 	private ORM orm;
 
-
+    private ArrayList<Prodavnica> prodavnice = new ArrayList<>();
+    private ArrayList<Proizvod> proizvodi = new ArrayList<>();
+    private ArrayList<Tip> tipovi = new ArrayList<>();
 	
 	//prave se 2 entiteta koja ce da presretne aspect i posalje query za kreiranje tabela.
 	
@@ -66,8 +71,7 @@ public class DAO {
 		System.out.printf("UPDATE %s SET %s WHERE %s",orm.getTableName(klazz),kolonePlusValues,whereStatement);
 		return true;
 	}
-	
-//	Create table QUERY
+
 	public void create(Class<?> klazz) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("CREATE TABLE "+ORM.getInstance().getTableName(klazz) + " (");
@@ -75,8 +79,33 @@ public class DAO {
 		sb.append(ORM.getInstance().getConstraintsForClass(klazz));
 		sb.append(")");
 		System.out.println(sb);
-}
-	public static DAO getInstance() {
+    }
+
+    public ArrayList<Prodavnica> getProdavnice() {
+        return prodavnice;
+    }
+
+    public void setProdavnice(ArrayList<Prodavnica> prodavnice) {
+        this.prodavnice = prodavnice;
+    }
+
+    public ArrayList<Proizvod> getProizvodi() {
+        return proizvodi;
+    }
+
+    public void setProizvodi(ArrayList<Proizvod> proizvodi) {
+        this.proizvodi = proizvodi;
+    }
+
+    public ArrayList<Tip> getTipovi() {
+        return tipovi;
+    }
+
+    public void setTipovi(ArrayList<Tip> tipovi) {
+        this.tipovi = tipovi;
+    }
+
+    public static DAO getInstance() {
 		if(instance == null) {
 			instance = new DAO();
 		}

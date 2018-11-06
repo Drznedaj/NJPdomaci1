@@ -3,6 +3,8 @@ package api;
 import entities.Prodavnica;
 import entities.Proizvod;
 
+import java.util.ArrayList;
+
 public class Generator {
 
     private static Generator instance;
@@ -15,53 +17,24 @@ public class Generator {
     }
 
     public void generateObjects(){
-        Prodavnica p1 = new Prodavnica();
-        Prodavnica p2 = new Prodavnica();
-        Prodavnica p3 = new Prodavnica();
-        Prodavnica p4 = new Prodavnica();
-        Prodavnica p5 = new Prodavnica();
-        Prodavnica p6 = new Prodavnica();
 
-        Proizvod pr1 = new Proizvod();
-        Proizvod pr2 = new Proizvod();
-        Proizvod pr3 = new Proizvod();
-        Proizvod pr4 = new Proizvod();
-        Proizvod pr5 = new Proizvod();
-        Proizvod pr6 = new Proizvod();
-        Proizvod pr7 = new Proizvod();
-        Proizvod pr8 = new Proizvod();
-        Proizvod pr9 = new Proizvod();
-        Proizvod pr10 = new Proizvod();
-        Proizvod pr11 = new Proizvod();
-        Proizvod pr12 = new Proizvod();
+        ArrayList<Prodavnica> prod = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            prod.add(new Prodavnica());
+        }
 
-        p1.setIme("prodavnica 1");
-        p2.setIme("prodavnica 2");
-        p3.setIme("prodavnica 3");
-        p4.setIme("prodavnica 4");
-        p5.setIme("prodavnica 5");
-        p6.setIme("prodavnica 6");
-        p1.setAdresa("Narodnih Heroja 1");
-        p2.setAdresa("Narodnih Heroja 2");
-        p3.setAdresa("Narodnih Heroja 3");
-        p4.setAdresa("Narodnih Heroja 4");
-        p5.setAdresa("Narodnih Heroja 5");
-        p6.setAdresa("Narodnih Heroja 6");
+        DAO.getInstance().setProdavnice(prod);
 
-        pr1.setNaziv("Paradajz1");
-        pr2.setNaziv("Paradajz12");
-        pr3.setNaziv("Paradajz13");
-        pr4.setNaziv("Paradajz14");
-        pr5.setNaziv("Paradajz15");
-        pr6.setNaziv("Paradajz16");
-        pr7.setNaziv("Paradajz17");
-        pr8.setNaziv("Paradajz18");
-        pr9.setNaziv("Paradajz19");
-        pr10.setNaziv("Paradajz19");
-        pr11.setNaziv("Paradajz19");
-        pr12.setNaziv("Paradajz19");
-        pr12.setNaziv("Paradajz00");
+        ArrayList<Proizvod> proiz = new ArrayList<>();
+        for (int i = 0; i < 12; i++) {
+            proiz.add(new Proizvod());
+        }
 
+        DAO.getInstance().setProizvodi(proiz);
+
+        for (int i = 0; i < DAO.getInstance().getProizvodi().size()-1; i++) {
+            DAO.getInstance().getProizvodi().get(i).setNaziv("paradajz "+i);
+        }
     }
 
 }

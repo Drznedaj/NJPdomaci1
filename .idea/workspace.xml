@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c9356d-2fc2-49f0-b180-a841001af1b3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/NjpDomaci1/src/aspects/UpdateAspect.aj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NjpDomaci1/src/api/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/NjpDomaci1/src/api/DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NjpDomaci1/src/api/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/NjpDomaci1/src/api/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NjpDomaci1/src/api/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/NjpDomaci1/src/api/ORM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NjpDomaci1/src/entities/Tip.java" beforeDir="false" afterPath="$PROJECT_DIR$/NjpDomaci1/src/entities/Tip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NjpDomaci1/annotations/Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NjpDomaci1/annotations/Type.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NjpDomaci1/api/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NjpDomaci1/api/DAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NjpDomaci1/api/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NjpDomaci1/api/Generator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NjpDomaci1/api/ORM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NjpDomaci1/api/ORM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NjpDomaci1/aspects/CreateTables.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NjpDomaci1/aspects/CreateTables.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NjpDomaci1/aspects/InsertAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NjpDomaci1/aspects/InsertAspect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NjpDomaci1/entities/BasicEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NjpDomaci1/entities/BasicEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NjpDomaci1/entities/Prodavnica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NjpDomaci1/entities/Prodavnica.class" afterDir="false" />
@@ -48,44 +46,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CreateTables.aj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/CreateTables.aj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Tip.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/Tip.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
+            <state relative-caret-position="92">
               <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Proizvod.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Proizvod.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/Proizvod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="275">
+              <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Generator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Generator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/api/Generator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Prodavnica.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/Prodavnica.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="517">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/BasicEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
-              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -105,8 +97,8 @@
       <file leaf-file-name="InsertAspect.aj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/InsertAspect.aj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="500">
+              <caret line="20" column="33" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,8 +109,27 @@
       <file leaf-file-name="DAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/api/DAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="350">
+              <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#393#394#0" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#2369#2370#0" expanded="true" />
+                <element signature="e#2402#2403#0" expanded="true" />
+                <element signature="e#2469#2470#0" expanded="true" />
+                <element signature="e#2513#2514#0" expanded="true" />
+                <element signature="e#2562#2563#0" expanded="true" />
+                <element signature="e#2594#2595#0" expanded="true" />
+                <element signature="e#2657#2658#0" expanded="true" />
+                <element signature="e#2699#2700#0" expanded="true" />
+                <element signature="e#2740#2741#0" expanded="true" />
+                <element signature="e#2769#2770#0" expanded="true" />
+                <element signature="e#2821#2822#0" expanded="true" />
+                <element signature="e#2857#2858#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,7 +138,7 @@
         <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/test/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
-              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -136,7 +147,7 @@
         <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/UpdateAspect.aj">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
-              <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,8 +158,8 @@
       <file leaf-file-name="ORM.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/api/ORM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1000">
-              <caret line="83" column="65" selection-start-line="83" selection-start-column="65" selection-end-line="83" selection-end-column="65" />
+            <state relative-caret-position="-225">
+              <caret line="58" column="13" lean-forward="true" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -173,13 +184,13 @@
         <option value="$PROJECT_DIR$/NjpDomaci1/src/aspects/Tes.aj" />
         <option value="$PROJECT_DIR$/NjpDomaci1/src/aspects/CreateTables.aj" />
         <option value="$PROJECT_DIR$/NjpDomaci1/src/test/Main.java" />
-        <option value="$PROJECT_DIR$/NjpDomaci1/src/api/DAO.java" />
         <option value="$PROJECT_DIR$/NjpDomaci1/src/entities/Tip.java" />
-        <option value="$PROJECT_DIR$/NjpDomaci1/src/api/ORM.java" />
-        <option value="$PROJECT_DIR$/NjpDomaci1/src/api/Generator.java" />
         <option value="$PROJECT_DIR$/NjpDomaci1/src/aspects/InsertAspect.aj" />
         <option value="$PROJECT_DIR$/NjpDomaci1/src/entities/BasicEntity.java" />
         <option value="$PROJECT_DIR$/NjpDomaci1/src/aspects/UpdateAspect.aj" />
+        <option value="$PROJECT_DIR$/NjpDomaci1/src/api/ORM.java" />
+        <option value="$PROJECT_DIR$/NjpDomaci1/src/api/DAO.java" />
+        <option value="$PROJECT_DIR$/NjpDomaci1/src/api/Generator.java" />
       </list>
     </option>
   </component>
@@ -213,6 +224,12 @@
               <item name="NJPdomaci1" type="b2602c69:ProjectViewProjectNode" />
               <item name="NjpDomaci1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NJPdomaci1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NjpDomaci1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NJPdomaci1" type="b2602c69:ProjectViewProjectNode" />
@@ -267,6 +284,132 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/annotations/Type.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/annotations/enumerators/FieldType.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/api/DAO.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/api/ORM.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/aspects/CreateTables.aj</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/entities/BasicEntity.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/entities/Prodavnica.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/entities/Proizvod.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/entities/Tip.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/test/Main.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/NjpDomaci1/annotations/enumerators/FieldType.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/NjpDomaci1/api/ORM.class</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/bin/entities/BasicEntity.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/bin/entities/Prodavnica.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/bin/entities/Proizvod.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/bin/test/Main.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/NjpDomaci1/src/annotations/Tabela.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -360,7 +503,7 @@
       <updated>1541426782333</updated>
       <workItem from="1541426783822" duration="8709000" />
       <workItem from="1541514433005" duration="903000" />
-      <workItem from="1541531530065" duration="7316000" />
+      <workItem from="1541531530065" duration="10065000" />
     </task>
     <task id="LOCAL-00001" summary="Uradjen insert preko aspekta">
       <created>1541536604176</created>
@@ -369,11 +512,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541536604176</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Nedovrsen Update">
+      <created>1541541298423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541541298423</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16928000" />
+    <option name="totallyTimeSpent" value="19677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -385,11 +535,11 @@
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5005208" side_tool="true" weight="0.21360256" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.21360256" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49947917" visible="true" weight="0.21360256" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
@@ -418,7 +568,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Uradjen insert preko aspekta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uradjen insert preko aspekta" />
+    <MESSAGE value="Nedovrsen Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nedovrsen Update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/CreateTables.aj">
@@ -439,9 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -459,9 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -476,6 +621,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#2369#2370#0" expanded="true" />
+            <element signature="e#2402#2403#0" expanded="true" />
+            <element signature="e#2469#2470#0" expanded="true" />
+            <element signature="e#2513#2514#0" expanded="true" />
+            <element signature="e#2562#2563#0" expanded="true" />
+            <element signature="e#2594#2595#0" expanded="true" />
+            <element signature="e#2657#2658#0" expanded="true" />
+            <element signature="e#2699#2700#0" expanded="true" />
+            <element signature="e#2740#2741#0" expanded="true" />
+            <element signature="e#2769#2770#0" expanded="true" />
+            <element signature="e#2821#2822#0" expanded="true" />
+            <element signature="e#2857#2858#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -504,55 +668,95 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/Tes.aj" />
-    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/CreateTables.aj">
+    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/Prodavnica.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="50">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/Prodavnica.java">
+    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/BasicEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="250">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/test/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/Tip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/api/DAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/api/ORM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="83" column="65" selection-start-line="83" selection-start-column="65" selection-end-line="83" selection-end-column="65" />
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/UpdateAspect.aj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/CreateTables.aj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/api/ORM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="58" column="13" lean-forward="true" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/Tip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/Proizvod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/api/DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#2369#2370#0" expanded="true" />
+            <element signature="e#2402#2403#0" expanded="true" />
+            <element signature="e#2469#2470#0" expanded="true" />
+            <element signature="e#2513#2514#0" expanded="true" />
+            <element signature="e#2562#2563#0" expanded="true" />
+            <element signature="e#2594#2595#0" expanded="true" />
+            <element signature="e#2657#2658#0" expanded="true" />
+            <element signature="e#2699#2700#0" expanded="true" />
+            <element signature="e#2740#2741#0" expanded="true" />
+            <element signature="e#2769#2770#0" expanded="true" />
+            <element signature="e#2821#2822#0" expanded="true" />
+            <element signature="e#2857#2858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/InsertAspect.aj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -561,35 +765,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/api/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/aspects/InsertAspect.aj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/BasicEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NjpDomaci1/src/entities/Proizvod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        <state relative-caret-position="517">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
