@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.ArrayList;
-
 import annotations.Column;
 import annotations.Tabela;
 import annotations.Table;

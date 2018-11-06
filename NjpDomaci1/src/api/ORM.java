@@ -90,6 +90,21 @@ public class ORM {
         return col;
     }
 
+	public String getTableColumn(Class<?> klasa, String colName) {
+		String column = null;
+
+		for (Field field : klasa.getDeclaredFields()) {
+			for (Annotation a : field.getAnnotations()) {
+				if (a instanceof Column && ((Column) a).name().equals(colName)) {
+					column = ((Column) a).name();
+				}
+
+			}
+		}
+
+		return column;
+	}
+
 	public ArrayList<String> getTableColumns(Class<?> klasa) {
 		ArrayList<String> columns = new ArrayList<>();
 
@@ -110,6 +125,7 @@ public class ORM {
 	}
 
 	// Prima super class i vraca njene kolone ukoliko postoji super class
+    //Ne trebaju nam kolone ovde tebra, treba nam samo ovaj ID :)
 	public ArrayList<String> getSuperClassId(Class<?> klasa) {
 		Class<?> superClass = klasa;
 		ArrayList<String> columns = new ArrayList<>();

@@ -6,17 +6,14 @@ import annotations.enumerators.FieldType;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import entities.Prodavnica;
-import entities.Proizvod;
 
 public class DAO {
 	
 	
 	private static DAO instance = null;
 	private ORM orm;
+
+
 	
 	//prave se 2 entiteta koja ce da presretne aspect i posalje query za kreiranje tabela.
 	
@@ -40,6 +37,7 @@ public class DAO {
 		System.out.printf("INSERT INTO %s %s VALUES %s",orm.getTableName(klazz),koloneFormat,valuesFormat);
 		return true;
 	}
+
 	public boolean update(ORM orm, Class<?> klazz) {
         String kolonePlusValues = "";
         ArrayList<String> kol = new ArrayList<>();
