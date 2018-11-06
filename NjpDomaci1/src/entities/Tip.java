@@ -5,7 +5,7 @@ import annotations.Id;
 import annotations.Table;
 
 @Table(name = "tipovi")
-public class Tip {
+public class Tip extends BasicEntity{
 
     @Id
     @Column(name = "tip_id")

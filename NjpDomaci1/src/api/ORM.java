@@ -81,6 +81,7 @@ public class ORM {
 	}
 
 	// Prima super class i vraca njene kolone ukoliko postoji super class
+    //Ne trebaju nam kolone ovde tebra, treba nam samo ovaj ID :)
 	public ArrayList<String> getSuperClassId(Class<?> klasa) {
 		Class<?> superClass = klasa;
 		ArrayList<String> columns = new ArrayList<>();

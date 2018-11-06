@@ -14,6 +14,8 @@ public class DAO {
 	
 	private static DAO instance = null;
 	private ORM orm;
+
+
 	
 	//prave se 2 entiteta koja ce da presretne aspect i posalje query za kreiranje tabela.
 	

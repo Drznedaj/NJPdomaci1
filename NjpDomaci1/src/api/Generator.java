@@ -60,6 +60,7 @@ public class Generator {
         pr10.setNaziv("Paradajz19");
         pr11.setNaziv("Paradajz19");
         pr12.setNaziv("Paradajz19");
+        pr12.setNaziv("Paradajz00");
 
     }
 
