@@ -2,6 +2,7 @@ package api;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
 import annotations.Column;
@@ -52,11 +53,11 @@ public class ORM {
 		StringBuilder constraints = new StringBuilder();
 		Field[] fields = klazz.getDeclaredFields();
 		for(int i= 0; i < fields.length; i++) {
-			constraints.append(getConstraintsForField(fields[i]));
-
-			if(i == fields.length-1) {
-				break;
+			if(Modifier.isStatic(fields[i].getModifiers())) {
+				continue;
 			}
+			constraints.append(getConstraintsForField(fields[i]));
+			
 			constraints.append(",");
 		}
 		
@@ -64,12 +65,14 @@ public class ORM {
 		if (superClass != null) {
 			fields = superClass.getDeclaredFields();
 			for(int i= 0; i < fields.length; i++) {
+				if(Modifier.isStatic(fields[i].getModifiers())) {
+					continue;
+				}
 				constraints.append(getConstraintsForField(fields[i]));
 
-				if(i == fields.length-1) {
-					break;
+				if(i < fields.length-2) {
+					constraints.append(",");
 				}
-				constraints.append(",");
 			}
 		}
 		return constraints;
