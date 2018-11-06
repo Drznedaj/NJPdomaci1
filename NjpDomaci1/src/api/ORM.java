@@ -5,13 +5,19 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import annotations.Column;
+import annotations.ForeinKey;
 import annotations.Id;
+import annotations.Mandatory;
+import annotations.NotNull;
 import annotations.PrimaryKey;
 import annotations.SuperClass;
 import annotations.Table;
+import annotations.Type;
+import annotations.enumerators.FieldType;
 
 public class ORM {
 	private static ORM instance = null;
+	
 	public String getTableName(Class<?> klasa) {
 		Annotation[] anotacije = klasa.getAnnotations();
 		String tableName = "";
@@ -31,7 +37,43 @@ public class ORM {
         }
 		return fieldValues;
 	}
+	
+	
+	public StringBuilder getConstraintsForField(Field field) {
+		Annotation[] annotationsForField = field.getAnnotations();
+		StringBuilder constraint = new StringBuilder();
+		for(Annotation a : annotationsForField) {
+			constraint.append(" " + getStringForAnnotation(a));
+		}
+		return constraint;
+	}
+	
+	public StringBuilder getConstraintsForClass(Class<?> klazz) {
+		StringBuilder constraints = new StringBuilder();
+		Field[] fields = klazz.getDeclaredFields();
+		for(int i= 0; i < fields.length; i++) {
+			constraints.append(getConstraintsForField(fields[i]));
 
+			if(i == fields.length-1) {
+				break;
+			}
+			constraints.append(",");
+		}
+		
+		Class<?> superClass = klazz.getSuperclass();
+		if (superClass != null) {
+			fields = superClass.getDeclaredFields();
+			for(int i= 0; i < fields.length; i++) {
+				constraints.append(getConstraintsForField(fields[i]));
+
+				if(i == fields.length-1) {
+					break;
+				}
+				constraints.append(",");
+			}
+		}
+		return constraints;
+	}
 	public String getTableColumnPlusValue(Class<?> klasa, String colName){
 	    String col = null;
         for (Field field : klasa.getDeclaredFields()) {
@@ -42,6 +84,8 @@ public class ORM {
 
                 }
             }
+            //prije prekida odraditi nesto
+            break;
         }
         return col;
     }
@@ -107,6 +151,35 @@ public class ORM {
 		// System.out.println("SUPER KLASA: " + isSuperClassFound + " , " + pkey);
 		return columns;
 	}
+	public String getStringForAnnotation(Annotation a) {
+		if(a instanceof Column) {
+			return ((Column) a).name();
+		}
+		if(a instanceof NotNull) {
+			return "NOT NULL";
+		}
+		if(a instanceof PrimaryKey) {
+			return "PRIMARY_KEY";
+		}
+		if(a instanceof Mandatory) {
+			return "MANDATORY";
+		}
+		if(a instanceof ForeinKey) {
+			return "FOREIGN_KEY";
+		}
+		if(a instanceof Type) {
+//			INT,FLOAT,DOUBLE,VARCHAR,DATE,AUTO_INCREMENT;
+			FieldType ft = ((Type) a).name();
+			if(ft.equals(FieldType.AUTO_INCREMENT)) {
+				return ft.name();
+			}
+			String field = ft.toString() + "(" + ((Type) a).length() + ")";
+			return field;
+		}
+		
+		return "";
+	}
+	
 	public static ORM getInstance() {
 		if(instance == null) {
 			instance = new ORM();

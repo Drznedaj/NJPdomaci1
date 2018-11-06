@@ -1,9 +1,11 @@
 package entities;
 
 import annotations.Column;
+import annotations.Tabela;
 import annotations.Table;
 
 @Table(name = "proizvodi")
+@Tabela
 public class Proizvod extends BasicEntity {
 
     @Column(name = "proizvod_idTipa")
@@ -11,19 +13,19 @@ public class Proizvod extends BasicEntity {
     @Column(name = "proizvod_naziv")
     private String naziv;
 
-    private Tip tipProizvoda;
+//    private Tip tipProizvoda;
 
     public Proizvod(){
         super();
     }
 
-    public Tip getTipProizvoda() {
-        return tipProizvoda;
-    }
-
-    public void setTipProizvoda(Tip tipProizvoda) {
-        this.tipProizvoda = tipProizvoda;
-    }
+//    public Tip getTipProizvoda() {
+//        return tipProizvoda;
+//    }
+//
+//    public void setTipProizvoda(Tip tipProizvoda) {
+//        this.tipProizvoda = tipProizvoda;
+//    }
 
 
     public String getIdTipa() {
@@ -41,4 +43,7 @@ public class Proizvod extends BasicEntity {
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
+    public void init() {
+		System.out.println("init u proizvod");
+	}
 }

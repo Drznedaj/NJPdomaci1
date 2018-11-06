@@ -2,15 +2,21 @@ package entities;
 
 import annotations.Column;
 import annotations.Id;
+import annotations.NotNull;
 import annotations.PrimaryKey;
 import annotations.SuperClass;
+import annotations.Type;
+import annotations.enumerators.FieldType;
 
 @SuperClass
 public abstract class BasicEntity{
 	
-	@PrimaryKey
+	
 	@Id
 	@Column(name="id")
+	@Type(name = FieldType.AUTO_INCREMENT, length = "0")
+	@PrimaryKey
+	@NotNull
 	private String id;
 
 	public BasicEntity() { this.id=""; }

@@ -4,7 +4,10 @@ import annotations.Type;
 import annotations.enumerators.FieldType;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import entities.Prodavnica;
 import entities.Proizvod;
@@ -23,7 +26,7 @@ public class DAO {
 	public void setOrm(ORM orm) {
 		this.orm = orm;
 	}
-	public boolean insert(ORM orm, Class<?> klazz) {
+	public boolean insert(ORM orm, Class<?> klazz, Object o) {
 		String koloneFormat="(";
 		String valuesFormat="(";
 		for (String s: orm.getTableColumns(klazz)) {
@@ -50,10 +53,11 @@ public class DAO {
             kolonePlusValues+=kol;
             kolonePlusValues+="=";
             try {
-                for (Annotation a: klazz.getField(s).getAnnotations()) {
+            	Field f =  klazz.getField(s);
+                for (Annotation a:f.getAnnotations()) {
                     if(a instanceof Type){
                         if (((Type) a).name() == FieldType.VARCHAR){
-
+//                        	String sasa = f.get
                         }
                     }
                 }
@@ -64,14 +68,20 @@ public class DAO {
 		System.out.printf("UPDATE %s SET %s WHERE %s",orm.getTableName(klazz),kolonePlusValues,whereStatement);
 		return true;
 	}
+	
+//	Create table QUERY
+	public void create(Class<?> klazz) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("CREATE TABLE "+ORM.getInstance().getTableName(klazz) + " (");
+		
+		sb.append(ORM.getInstance().getConstraintsForClass(klazz));
+		sb.append(")");
+		System.out.println(sb);
+}
 	public static DAO getInstance() {
 		if(instance == null) {
 			instance = new DAO();
 		}
 		return instance;
 	}
-	
-	
-	
-	
 }

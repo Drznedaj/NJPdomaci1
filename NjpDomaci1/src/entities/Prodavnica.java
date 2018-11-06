@@ -3,25 +3,26 @@ package entities;
 import java.util.ArrayList;
 
 import annotations.Column;
+import annotations.Tabela;
 import annotations.Table;
 import annotations.Type;
 import annotations.enumerators.FieldType;
 
 @Table(name="prodavnice")
+@Tabela
 public class Prodavnica extends BasicEntity {
 	
 	@Column(name= "prodavnica_ime")
-	@Type(name = FieldType.VARCHAR)
+	@Type(name = FieldType.VARCHAR, length="32")
 	private String ime;
 	
 	@Column(name= "prodavnica_adresa")
-    @Type(name = FieldType.VARCHAR)
+    @Type(name = FieldType.VARCHAR, length="32")
 	private String adresa;
 
-	private ArrayList<Proizvod> proizvodi;
 
 	@Column(name = "prodavnica_brojProdavaca")
-    @Type(name = FieldType.INT)
+    @Type(name = FieldType.INT,length="6")
 	private String brojProdavaca;
 	
 	public Prodavnica() {
