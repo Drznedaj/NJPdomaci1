@@ -71,7 +71,24 @@ public class DAO {
 		System.out.printf("UPDATE %s SET %s WHERE %s",orm.getTableName(klazz),kolonePlusValues,whereStatement);
 		return true;
 	}
-
+	
+	public boolean deleteAND(Class<?> klazz, ArrayList<String> columns, ArrayList<String> values) {
+		String delete = "DELETE FROM %s WHERE %s";
+		String columnsEqVals = "";
+		for(int i=0; i < columns.size(); i++) {
+			if(orm.getTableColumn(klazz, columns.get(i))==null) {
+				System.err.println("Column: " + columns.get(i) +" is not defined in database!!! Could not delete");
+				return false;
+			}
+			if(i < columns.size()-1) {
+				columnsEqVals += columns.get(i) + " = " + values.get(i) + " AND ";
+			}
+			columnsEqVals += columns.get(i) + " = " + values.get(i);
+		}
+		delete = String.format(delete, orm.getTableName(klazz), columnsEqVals);
+		
+		return true;
+	}
 	public void create(Class<?> klazz) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("CREATE TABLE "+ORM.getInstance().getTableName(klazz) + " (");
