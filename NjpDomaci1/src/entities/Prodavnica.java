@@ -19,7 +19,7 @@ public class Prodavnica extends BasicEntity {
 	private String adresa;
 
 
-	@Column(name = "prodavnica_brojProdavaca")
+	@Column(name = "prodavnica_brojprodavaca")
     @Type(name = FieldType.INT,length="6")
 	private String brojProdavaca;
 	
