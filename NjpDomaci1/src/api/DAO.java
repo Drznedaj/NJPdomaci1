@@ -43,32 +43,34 @@ public class DAO {
 		return true;
 	}
 
-	public boolean update(ORM orm, Class<?> klazz) {
-        String kolonePlusValues = "";
-        ArrayList<String> kol = new ArrayList<>();
+	public boolean updateOne(Object o, String colu, String value) {
+	    Class<?> klazz = o.getClass();
+        String kolonaPlusValues = colu+"="+value;
         String whereStatement ="";
 
-		for (String s: orm.getTableColumns(klazz)) {
-			kol.add(s);
-		}
-
-        for (String s: kol) {
-            kolonePlusValues+=kol;
-            kolonePlusValues+="=";
-            try {
-            	Field f =  klazz.getField(s);
-                for (Annotation a:f.getAnnotations()) {
-                    if(a instanceof Type){
-                        if (((Type) a).name() == FieldType.VARCHAR){
-//                        	String sasa = f.get
-                        }
-                    }
-                }
-            } catch (NoSuchFieldException e) {
-                e.printStackTrace();
+        String id = null;
+        for (Proizvod p : this.proizvodi){
+            if(o.equals(p)){
+                id = ((Proizvod) o).getId();
+                break;
             }
         }
-		System.out.printf("UPDATE %s SET %s WHERE %s",orm.getTableName(klazz),kolonePlusValues,whereStatement);
+        for (Prodavnica p : this.prodavnice){
+            if(o.equals(p)){
+                id = ((Prodavnica) o).getId();
+                break;
+            }
+        }
+        for (Tip p : this.tipovi){
+            if(o.equals(p)){
+                id = ((Tip) o).getId();
+                break;
+            }
+        }
+
+        whereStatement += ORM.getInstance().getSuperClassId(klazz)+"="+id;
+
+		System.out.printf("UPDATE %s SET %s WHERE %s",ORM.getInstance().getTableName(klazz),kolonaPlusValues,whereStatement);
 		return true;
 	}
 

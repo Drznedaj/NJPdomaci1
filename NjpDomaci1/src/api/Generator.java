@@ -34,6 +34,13 @@ public class Generator {
 
         for (int i = 0; i < DAO.getInstance().getProizvodi().size()-1; i++) {
             DAO.getInstance().getProizvodi().get(i).setNaziv("paradajz "+i);
+            DAO.getInstance().getProizvodi().get(i).setId(Integer.toString(i+1));
+        }
+
+        for (int i = 0; i < DAO.getInstance().getProdavnice().size()-1; i++) {
+            DAO.getInstance().getProdavnice().get(i).setId(Integer.toString(i+1));
+            DAO.getInstance().getProdavnice().get(i).setIme("prodavnica "+i);
+            DAO.getInstance().getProdavnice().get(i).setAdresa("Njegoseva "+i);
         }
     }
 

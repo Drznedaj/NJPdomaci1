@@ -74,18 +74,21 @@ public class ORM {
 		}
 		return constraints;
 	}
-	public String getTableColumnPlusValue(Class<?> klasa, String colName){
-	    String col = null;
+	public String getTableColumnPlusValue(Class<?> klasa, String colName, Object o){
+	    String col = "";
         for (Field field : klasa.getDeclaredFields()) {
             for (Annotation a : field.getAnnotations()) {
                 if (a instanceof Column && (((Column) a).name()).equals(colName)) {
                     col = ((Column) a).name();
                     col += "=";
-
+                    try {
+                        col += field.get(o);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                    break;
                 }
             }
-            //prije prekida odraditi nesto
-            break;
         }
         return col;
     }
@@ -118,7 +121,7 @@ public class ORM {
 		}
 		Class<?> superClass = klasa.getSuperclass();
 		if (superClass != null) {
-			columns.addAll(getSuperClassId(superClass));
+			//columns.addAll(getSuperClassId(superClass));
 		}
 
 		return columns;
@@ -126,9 +129,9 @@ public class ORM {
 
 	// Prima super class i vraca njene kolone ukoliko postoji super class
     //Ne trebaju nam kolone ovde tebra, treba nam samo ovaj ID :)
-	public ArrayList<String> getSuperClassId(Class<?> klasa) {
-		Class<?> superClass = klasa;
-		ArrayList<String> columns = new ArrayList<>();
+	public String getSuperClassId(Class<?> klasa) {
+		Class<?> superClass = klasa.getSuperclass();
+		String columns = null;
 		boolean isSuperClassFound = false;
 		if (superClass != null) {
 			Annotation[] annotations = superClass.getAnnotations();
@@ -140,31 +143,28 @@ public class ORM {
 			}
 		}
 		if (isSuperClassFound) {
-
 			Field[] fields = superClass.getDeclaredFields();
 			for (Field f : fields) {
-				boolean PK = false;
 				boolean id = false;
 				Annotation column = null;
 
 				for (Annotation a : f.getAnnotations()) {
-					if (a instanceof PrimaryKey) {
-						PK = true;
-					}
 					if (a instanceof Id) {
 						id = true;
 					}
-					if (a instanceof Column) { // Ovde ce da nam pokupi samo jedan column ja msm
+					if (a instanceof Column) {
 						column = a;
+                        if (id) {
+                            columns = (((Column) column).name());
+                            break;
+                        }
 					}
 				}
-				if (PK && id && column != null) {
-					columns.add(((Column) column).name()); // Ovaj deo bi trebao unutar annotation for-a...
-				}
+                if (id && column != null) {
+				    break;
+                }
 			}
 		}
-
-		// System.out.println("SUPER KLASA: " + isSuperClassFound + " , " + pkey);
 		return columns;
 	}
 	public String getStringForAnnotation(Annotation a) {
