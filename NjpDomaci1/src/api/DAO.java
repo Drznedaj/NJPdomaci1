@@ -62,7 +62,25 @@ public class DAO {
         System.out.printf("SELECT %s FROM %s INNER JOIN %s ON %s\n",formatKolona,table1,table2,idFormat);
         return true;
     }
-
+	
+	public boolean select(Class<?> klazz, String[] cols){
+	    String formatKolona = "";
+	    String table1 = ORM.getInstance().getTableName(klazz);
+        for (int i = 0; i < cols.length;i++) {
+            formatKolona += ORM.getInstance().getTableColumn(klazz,cols[i]);
+            if(i != cols.length-1) {formatKolona += ",";}
+        }
+        
+        System.out.printf("SELECT %s FROM %s\n",formatKolona,table1);
+        return true;
+    }
+	
+	public boolean selectAll(Class<?> klazz){
+	    String formatKolona = "";
+	    String table1 = ORM.getInstance().getTableName(klazz);
+        System.out.printf("SELECT * FROM %s\n",table1);
+        return true;
+    }
 	public boolean updateOne(Object o, String colu, String value) {
 	    Class<?> klazz = o.getClass();
         String kolonaPlusValues = colu+"="+value;
@@ -94,20 +112,17 @@ public class DAO {
 		return true;
 	}
 	
-	public boolean deleteAND(Class<?> klazz, ArrayList<String> columns, ArrayList<String> values) {
-		String delete = "DELETE FROM %s WHERE %s";
+	public boolean deleteAND(Class<?> klazz, String[] columns, String[] values) {
 		String columnsEqVals = "";
-		for(int i=0; i < columns.size(); i++) {
-			if(orm.getTableColumn(klazz, columns.get(i))==null) {
-				System.err.println("Column: " + columns.get(i) +" is not defined in database!!! Could not delete");
-				return false;
+		for(int i=0; i < columns.length; i++) {
+			
+			if(i < columns.length-1) {
+				columnsEqVals += ORM.getInstance().getTableColumn(klazz, columns[i]) + " = " + values[i] + " AND ";
+			}else {
+				columnsEqVals += ORM.getInstance().getTableColumn(klazz, columns[i]) + " = " + values[i];
 			}
-			if(i < columns.size()-1) {
-				columnsEqVals += columns.get(i) + " = " + values.get(i) + " AND ";
-			}
-			columnsEqVals += columns.get(i) + " = " + values.get(i);
 		}
-		delete = String.format(delete, orm.getTableName(klazz), columnsEqVals);
+		System.out.printf("DELETE FROM %s WHERE %s\n", ORM.getInstance().getTableName(klazz), columnsEqVals);
 		
 		return true;
 	}
