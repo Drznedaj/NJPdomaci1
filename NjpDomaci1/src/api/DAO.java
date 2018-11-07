@@ -43,6 +43,26 @@ public class DAO {
 		return true;
 	}
 
+	public boolean join(Class<?> k1, Class<?> k2, String[] colsK1, String[] colsK2){
+	    String formatKolona = "";
+	    String table1 = ORM.getInstance().getTableName(k1);
+        String table2 = ORM.getInstance().getTableName(k2);
+        for (String s: colsK1) {
+            formatKolona += table1+"."+ORM.getInstance().getTableColumn(k1,s);
+            formatKolona += ",";
+        }
+        for (int i = 0; i < colsK2.length; i++) {
+            formatKolona += table2+"."+ORM.getInstance().getTableColumn(k2,colsK2[i]);
+            if (i != colsK2.length-1){
+                formatKolona += ",";
+            }
+        }
+        String idFormat = "";
+        idFormat+= table1+"."+ORM.getInstance().getClassId(k1)+"="+table2+"."+ORM.getInstance().getSuperClassId(k2);
+        System.out.printf("SELECT %s FROM %s INNER JOIN %s ON %s\n",formatKolona,table1,table2,idFormat);
+        return true;
+    }
+
 	public boolean updateOne(Object o, String colu, String value) {
 	    Class<?> klazz = o.getClass();
         String kolonaPlusValues = colu+"="+value;
@@ -70,7 +90,7 @@ public class DAO {
 
         whereStatement += ORM.getInstance().getSuperClassId(klazz)+"="+id;
 
-		System.out.printf("UPDATE %s SET %s WHERE %s",ORM.getInstance().getTableName(klazz),kolonaPlusValues,whereStatement);
+		System.out.printf("UPDATE %s SET %s WHERE %s\n",ORM.getInstance().getTableName(klazz),kolonaPlusValues,whereStatement);
 		return true;
 	}
 	

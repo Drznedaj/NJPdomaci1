@@ -1,6 +1,7 @@
 package entities;
 
 import annotations.Column;
+import annotations.Id;
 import annotations.Tabela;
 import annotations.Table;
 
@@ -8,6 +9,7 @@ import annotations.Table;
 @Tabela
 public class Proizvod extends BasicEntity {
 
+    @Id
     @Column(name = "proizvod_idTipa")
     private String idTipa;
     @Column(name = "proizvod_naziv")

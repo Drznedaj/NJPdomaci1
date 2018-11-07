@@ -170,6 +170,34 @@ public class ORM {
 		}
 		return columns;
 	}
+    public String getClassId(Class<?> klasa) {
+        Class<?> superClass = klasa;
+        String columns = null;
+
+        Field[] fields = superClass.getDeclaredFields();
+        for (Field f : fields) {
+            boolean id = false;
+            Annotation column = null;
+
+            for (Annotation a : f.getAnnotations()) {
+                if (a instanceof Id) {
+                    id = true;
+                }
+                if (a instanceof Column) {
+                    column = a;
+                    if (id) {
+                        columns = (((Column) column).name());
+                        break;
+                    }
+                }
+            }
+            if (id && column != null) {
+                break;
+            }
+        }
+
+        return columns;
+    }
 	public String getStringForAnnotation(Annotation a) {
 		if(a instanceof Column) {
 			return ((Column) a).name();
